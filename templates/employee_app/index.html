@@ -1,0 +1,13 @@
+{% extends "employee_app/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1>Employee Onboarding Portal</h1>
+    <p class="lead">Welcome to the Employee Onboarding Portal.</p>
+    <hr class="my-4">
+    <p>Register as a new employee to get started? <a href="{% url 'employee_app:register' %}" class="btn btn-primary btn-lg">Register as a New Employee</a>
+    </p>
+</div>
+    
+
+{% endblock %}

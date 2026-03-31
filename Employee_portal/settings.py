@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 import os
 WEBSITE_HOSTNAME = os.environ.get('WEBSITE_HOSTNAME')
 

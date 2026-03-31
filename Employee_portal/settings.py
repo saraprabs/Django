@@ -31,7 +31,7 @@ SECRET_KEY = 'avlqr!74^3zt8%!kt=v*$ge$#$myjowdjnay9-(r$+8poraqlr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -127,5 +127,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIR = [STATIC_DIR,]
+# Add this at the bottom of settings.py
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# This tells WhiteNoise to cache and compress your CSS/JS files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'

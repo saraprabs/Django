@@ -1,5 +1,5 @@
 # Core Framework
-Django==1.11.29
+Django>=4.2.0
 
 # Database & Server
 gunicorn

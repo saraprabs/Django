@@ -1,0 +1,11 @@
+# Core Framework
+Django==1.11.29
+
+# Database & Server
+gunicorn
+
+# Image Handling (Required for UserProfileInfo profile_pic)
+Pillow
+
+# Static File Management (Recommended for Azure)
+whitenoise

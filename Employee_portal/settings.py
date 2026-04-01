@@ -16,7 +16,7 @@ WEBSITE_HOSTNAME = os.environ.get('WEBSITE_HOSTNAME')
 if WEBSITE_HOSTNAME:
     ALLOWED_HOSTS = [WEBSITE_HOSTNAME]
 else:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+    ALLOWED_HOSTS = ['mydjangowebapp-eagecpf9a2hhgyfn.westeurope-01.azurewebsites.net','127.0.0.1', 'localhost']
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')

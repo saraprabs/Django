@@ -97,6 +97,7 @@ DATABASES = {
         'OPTIONS': {
             'driver': 'ODBC Driver 18 for SQL Server',
             'connection_timeout': 30,
+        },
     }
 }
 

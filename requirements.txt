@@ -9,3 +9,6 @@ Pillow
 
 # Static File Management (Recommended for Azure)
 whitenoise
+
+mssql-django
+pyodbc

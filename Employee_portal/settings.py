@@ -32,7 +32,11 @@ SECRET_KEY = 'avlqr!74^3zt8%!kt=v*$ge$#$myjowdjnay9-(r$+8poraqlr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
+# Pull the secrets from the App Service environment
+db_host = os.environ.get('AZURE_SQL_HOST')
+db_name = os.environ.get('AZURE_SQL_DB')
+db_user = os.environ.get('AZURE_SQL_USER')
+db_pass = os.environ.get('AZURE_SQL_PASSWORD')
 
 
 # Application definition
@@ -84,8 +88,15 @@ WSGI_APPLICATION = 'Employee_portal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mssql', # Requires 'mssql-django' package
+        'NAME': db_name,
+        'USER': db_user,
+        'PASSWORD': db_pass,
+        'HOST': db_host,
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'connection_timeout': 30,
     }
 }
 

@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: 'MyDJangoWebappEmployeePortal'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9B6DF16DACFB42179A2B83B5679C4FE7 }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}

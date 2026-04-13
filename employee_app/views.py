@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from employee_app import views
 from employee_app.forms import UserForm, UserProfileInfoForm
+from .services import storage_service, cosmos_service
 
 def index(request):
     return render(request, 'employee_app/index.html')

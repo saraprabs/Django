@@ -21,9 +21,16 @@ def register(request):
             profile.user = user
 
             if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
+                image_url = storage_service.upload_profile_picture(request.FILES['profile_pic'])
 
-            profile.save()
+            user_data = {
+                'username': user.username,
+                'email': user.email,
+                'password': user.password, # This is now the hashed string
+                'portfolio': profile_form.cleaned_data.get('portfolio_site'),
+                'name': f"{user.first_name} {user.last_name}".strip()
+            }
+            cosmos_service.save_user_profile(user_data, image_url)
             registered = True
         else:
             print(user_form.errors, profile_form.errors)

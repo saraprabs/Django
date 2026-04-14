@@ -23,6 +23,10 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media' )
 
+from pathlib import Path
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -88,18 +92,12 @@ WSGI_APPLICATION = 'Employee_portal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql', # Requires 'mssql-django' package
-        'NAME': db_name,
-        'USER': db_user,
-        'PASSWORD': db_pass,
-        'HOST': db_host,
-        'PORT': '1433',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 18 for SQL Server',
-            'connection_timeout': 30,
+        'ENGINE': 'django.db.backends.sqlite3', # Requires 'mssql-django' package
+        'NAME': BASE_DIR / 'db.sqlite3',
+        
         },
     }
-}
+
 
 
 # Password validation

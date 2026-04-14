@@ -1,0 +1,33 @@
+{% extends 'employee_app/base.html' %}
+
+{% block body_block %}
+<div class="container">
+    <h2>Registered Employees</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Profile Pic</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Portfolio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>
+                    {% if emp.profile_pic_url != "No URL Generated" %}
+                        <img src="{{ emp.profile_pic_url }}" width="50" height="50" style="border-radius: 50%;">
+                    {% else %}
+                        <span>No Image</span>
+                    {% endif %}
+                </td>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.email }}</td>
+                <td><a href="{{ emp.portfolio }}" target="_blank">Visit Site</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

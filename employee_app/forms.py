@@ -10,6 +10,7 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password')
 
 class UserProfileInfoForm(forms.ModelForm):
+    profile_pic = forms.ImageField(required=False)
     class Meta():
         model = UserProfileInfo
         fields = ('portfolio_site', 'profile_pic')
